@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import site from "../../assets/site.png"
 import github from "../../assets/github.png"
 import location from "../../assets/location.png"
@@ -7,12 +7,17 @@ import { useRouter } from 'next/router'
 import axios from '../../axios'
 import Repo from '../components/Repo'
 
+// type UInfo = {
+//   name: string;
+//   bio?: string;
+// }
+
 const User = () => {
   const router = useRouter();
   const login = router?.query?.login;
   console.log(login, 'lognq')
-
-  const [userInfo, setUserInfo] = useState([]);
+  
+  const [userInfo, setUserInfo] = useState<any[]>([]);
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {

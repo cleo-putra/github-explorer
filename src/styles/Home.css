@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  color: #c4c4c4;
+  color: white;
 }
 
 .search-form form {
@@ -14,7 +14,7 @@
 }
 
 .search-form input {
-  width: 70%;
+  width: 80%;
   height: 45px;
 }
 

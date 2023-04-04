@@ -69,16 +69,18 @@ const Home = () => {
       <div className='search-form'>
         <h2>Github Search User</h2>
         <form>
-          <input value={query} onChange={handleQueryInput} type='text' />
+          <input value={query} onChange={handleQueryInput} type='text' placeholder='Insert Username Github' />
           <button onClick={handleSearchUsers}>Search</button>
         </form>
       </div>
+      {users.length > 0 && (
+        
       <div className='search-results'>
         <div className="search-results">
           <div className="more-options">
             <label>
               <small>Per Page</small>
-              <select onChange={handlePageLimit}>
+              <select style={{marginLeft: '10px'}} onChange={handlePageLimit}>
                 <option value="5">5</option>
                 <option value="15">15</option>
                 <option value="25">25</option>
@@ -100,6 +102,8 @@ const Home = () => {
           )}
         </div>
       </div>
+      
+      )}
     </div>
   )
 }

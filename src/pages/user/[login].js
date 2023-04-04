@@ -23,7 +23,6 @@ import Repo from '../components/Repo'
 const User = () => {
   const router = useRouter();
   const login = router?.query?.login;
-  console.log(login, 'lognq')
   
   const [userInfo, setUserInfo] = useState([]);
   const [repos, setRepos] = useState([]);

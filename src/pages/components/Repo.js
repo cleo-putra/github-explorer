@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const Repo = ({ repo }) => {
-  const { name, html_url, description, language } = repo;
+  const { name, html_url, description, language } = repo || {};
   const router = useRouter();
   if (router.isFallback) {
     <h1>Data is loading</h1>;

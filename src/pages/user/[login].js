@@ -11,21 +11,21 @@ import Repo from '../components/Repo'
 //   name: string;
 //   bio?: string;
 // }
+// interface UInfo {
+//   avatar_url: string;
+//   name: string;
+//   location: string;
+//   blog: string;
+//   html_url: string;
+//   [key:string]: string;
+// }
 
 const User = () => {
-  interface UInfo {
-    avatar_url: string;
-    name: string;
-    location: string;
-    blog: string;
-    html_url: string;
-    [key:string]: string;
-  }
   const router = useRouter();
   const login = router?.query?.login;
   console.log(login, 'lognq')
   
-  const [userInfo, setUserInfo] = useState<Array<UInfo>>([]);
+  const [userInfo, setUserInfo] = useState([]);
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
@@ -44,38 +44,40 @@ const User = () => {
       fetchUserInformation();
   }, [login]);
 
+  console.log(userInfo, 'userInfo');
+
   return (
     <div className='container'>
       <a href="/"><button className='back'>Back</button></a>
       <div className="user-information">
         <div className="image">
-          <img src={userInfo[0].avatar_url} />
+          <img src={userInfo.avatar_url} />
         </div>
         <div className="user-content">
-          <h3>{userInfo[0].name}</h3>
-          <p>{userInfo[0].bio}</p>
+          <h3>{userInfo.name}</h3>
+          <p>{userInfo.bio}</p>
           <div className="more-data">
-            <p><img className='logo-icon' src={user.src} alt="user" />{userInfo[0].followers} Followers | Following {userInfo[0].following}</p>
-            {userInfo[0].location && (
+            <p><img className='logo-icon' src={user.src} alt="user" />{userInfo.followers} Followers | Following {userInfo.following}</p>
+            {userInfo.location && (
             <p>
               <img className='logo-icon' src={location.src} alt="" />
-              {userInfo[0].location}
+              {userInfo.location}
             </p>
             )}
-            {userInfo[0].blog && (
+            {userInfo.blog && (
             <p>
-              <img className='logo-icon' src={site.src} alt="" />{userInfo[0].blog}
+              <img className='logo-icon' src={site.src} alt="" />{userInfo.blog}
             </p>
             )}
             <p>
               <img className='logo-icon' src={github.src} alt="" />
-              <a style={{cursor: 'pointer', textDecoration: 'underline'}} href={userInfo[0].html_url} target="_blank">View Github Profile</a>
+              <a style={{cursor: 'pointer', textDecoration: 'underline'}} href={userInfo.html_url} target="_blank">View Github Profile</a>
             </p>
           </div>
         </div>
       </div>
       <div className="user-repos">
-        {repos ? (repos.map((repo: any) => {
+        {repos ? (repos.map((repo) => {
          return <Repo repo={repo} key={repo.id} />
 })) : (
   <h2>No repository for this user...</h2>

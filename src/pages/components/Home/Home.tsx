@@ -75,7 +75,7 @@ const Home = () => {
       </div>
       {users.length > 0 && (
         
-      <div className='search-results'>
+      <div className='search-results1'>
         <div className="search-results">
           <div className="more-options">
             <label>

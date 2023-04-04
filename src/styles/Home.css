@@ -85,5 +85,39 @@
   background-color: #088F8F;
   color: #fff;
   margin: 0 5px;
+}
 
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .search-form {
+    margin: 10px;
+    width: 50%;
+    height: 200px!important;    
+    text-align: center;
+  }
+  .search-form button {
+   margin-top: 20px;
+  }
+
+  .search-results1 {
+    margin: 10px;
+    width: 50%;
+  }
+
+  .user-info{
+    padding: 0 50px;
+  }
+
+  .user-information{
+    margin: 10px;
+    width: 50%;
+    height: 250px!important;    
+  }
+
+  .user-repos{
+    margin: 20px 10px!important;
+    width: 50%;
+    
+  }
+  
 }

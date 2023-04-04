@@ -35,8 +35,8 @@
 }
 
 .back {
-  background: #6cc644;
-  color: #088F8F;
+  background: #088F8F;
+  color: white;
   border-radius: 7px;
   padding: 10px;
   display: inline-block;
@@ -56,4 +56,20 @@
 
 .repo a {
   color: #088F8F;
+}
+
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .user-information .image img {
+    width: 100px;
+  }
+
+  .user-content{
+    padding: 0px;
+  }
+
+  .back{
+     margin: 10px;
+  }
 }

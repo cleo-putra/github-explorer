@@ -1,8 +1,13 @@
 import React from 'react'
+import {useRouter} from 'next/router';
 
 const ListUsers = (user: any) => {
   console.log(user, 'userq');
   const {avatar_url, login, id} = user?.user;
+  const router = useRouter();
+  if (router.isFallback) {
+    <h1>Data is loading</h1>;
+  }
 
   return (
     <div className="user">
